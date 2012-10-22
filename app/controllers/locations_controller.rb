@@ -4,6 +4,7 @@ class LocationsController < ApplicationController
       @locations = Location.near(params[:search], 50, :order => :distance)
   else
       @locations = Location.all
+      @resultsbysearch = Geocoder.search("McCarren Park, Brooklyn, NY")
   end
   end
 

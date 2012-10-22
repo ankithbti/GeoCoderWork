@@ -9,6 +9,13 @@
     <%= submit_tag "Search Near", :name => nil %>
   </p>
 <% end %>
+<ul>
+<% @resultsbysearch.each do |result| %>
+    <li>
+      <%= result.postal_code %>
+    </li>
+    <% end %>
+  </ul>
 <table class="table table-striped">
   <thead>
     <tr>
@@ -21,6 +28,8 @@
     </tr>
   </thead>
   <tbody>
+
+
     <% @locations.each do |location| %>
       <tr>
         <td><%= link_to location.id, location_path(location) %></td>
